@@ -5,6 +5,8 @@ var rowLength = oTable.rows.length;
 
 var pink = 0.00;
 var blue = 0.00;
+var pinkCount = 0;
+var blueCount = 0;
 //loops through rows    
 for (i = 1; i < rowLength; i++){
 
@@ -19,10 +21,12 @@ for (i = 1; i < rowLength; i++){
 	if (nameColumn.indexOf("Pink") >= 0)
 	{
 		pink += totalKmPersonal;
+		pinkCount++;
 	}
 	else
 	{
 		blue += totalKmPersonal;
+		blueCount++;
 	}
 }
 var diff = Math.abs(pink - blue);
@@ -30,4 +34,4 @@ pink = pink.toFixed(2);
 blue = blue.toFixed(2);
 diff = diff.toFixed(2);
 
-alert("Pink : " + pink + " km\nBlue : " + blue + " km\nDiff : " + diff + " km"); 
+alert("Pink : " + pink + " km (" + pinkCount + " คน) \nBlue : " + blue + " km ("+ blueCount + " คน)\nDiff : " + diff + " km"); 
